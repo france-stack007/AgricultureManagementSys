@@ -9,20 +9,53 @@ include "connection.php";
   //     document.getElementById("closeDecB").addEventListener("click", function(){
   //         document.querySelector(".popup3").style.display = "none";
   //     })
-  // console.log("Hellow")
-  //     let elements = document.querySelector('.declineB')
-  //     console.log(elements)
-  //     for (let element of elements) {
-  //       element.addEventListener('click', function(){
-  //           document.querySelectorAll(".popup3").style.display = "flex";
-  //       })
-  //     }
+
 </script>
 <style>
 body{
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+}
+.popup4{
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 120;
+}
+.popup-child5{
+    display: flex;
+    gap: 10px;
+}
+.popup-content4{
+    height: auto;
+    width: 550px;
+    background: white;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+.popIn4{
+    background-color: transparent;
+    margin: 16px auto;
+    display: relative;
+    width: 90%;
+    padding: 8px;
+    margin-left: 20px;
+    border: none;
+    border-bottom: 2px solid black;
 }
 .popup3{
     background: rgba(0, 0, 0, 0.6);

@@ -18,7 +18,7 @@ include "personnel_dash_header.php";
                   <li><a href="personnel_dash_farmers_request.php"><i class="fas fa-user-edit"></i><span>Farmers Request</span></a></li>
                   <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
-                  <li><a href="#"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
+                  <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>

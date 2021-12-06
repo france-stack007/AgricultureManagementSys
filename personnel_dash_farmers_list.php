@@ -16,10 +16,10 @@ include "personnel_dash_header.php";
             <li class="dropdown">
               <a href="#"><i class="fas fa-cogs"></i><span>Features</span></a>
               <ul>
-                  <li><a href="personnel_dash_farmers_request.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-user-edit"></i><span>Farmers Request</span></a></li>
+                  <li><a href="personnel_dash_farmers_request.php"><i class="fas fa-user-edit"></i><span>Farmers Request</span></a></li>
                   <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
-                  <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
+                  <li><a href="personnel_dash_farmers_list.php" style="color: rgba(0, 255, 0, 0.8)"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>
@@ -360,54 +360,21 @@ include "personnel_dash_header.php";
             </div>
         </div>
     </div>
-    <div class="popup4">
-        <div class="popup-content4">
-            <div class="popup-child4">
-                    <form role="form">
-                        <hr class="colorgraph" style="height: 10px">
-                        <div class="formG" style="display: flex; flex-direction: row; gap: 40px; justify-content: center">
-                            <div style="width: 100%">
-                            <br>
-                            <h5>Purpose of Request</h5>
-                            <hr>
-                            <div class="row" style="text-align: left; display: flex; justify-content: center">
-                                <div class="row">
-                                  <div class="col-xs-12 col-sm-6 col-md-12" style="margin: 10px 0 10px; ">
-                                    <label for="selectD">Purpose of Request </label>
-                                    <textarea name="selectD" id="selectD" cols="58" rows="5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit nesciunt quasi quibusdam officiis magnam numquam quae nostrum fugiat reiciendis tenetur ut, velit, quod beatae perferendis earum dolor maiores soluta quisquam?</textarea>
-                                  </div>
-                                </div>
-                            </div>
-                                <br>
-                                <div class="column" style="text-align: center">
-                                    <button type="button" class="btn btn-success" style="width: 50%" id="submitBdec">Confirm</button>
-                                </div>
-                                <hr class="colorgraph" style="height: 10px">
-                            </div>
-                        </div>
-                    </form>
-                <!-- </div> -->
-            </div>
-            <div class="popup-child2">
-                <a type="button" href="" id="closeViewB" class="btn btn-success" style="position:absolute; top:0; right:0; text-decoration: none; z-index: 1; cursor: pointer; border-radius: 5em">X</a>
-            </div>
-        </div>
-    </div>
-<div class="content">
+    <div class="content">
     <div class="container-fluid">
       <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
           <div class="span12">
                 <div class="printGrp" style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-end; border: 2px solid black;
                     padding: 15px 0 15px 0; margin-top: 10px; flex-wrap: wrap; background-color: rgba(0, 128, 0, 0.7); position: relative">
                     <div style="left: 10px; position: absolute">
-                        <h3>Farmers Request</h3>
+                        <h3>Farmers List</h3>
                     </div>
                         <div style="margin: 0 10px 0 0">
                             <!-- <label for="middlename">Program: </label>
                             <input class="inputC" type="text" name="middlename" placeholder="Program" required> -->
                             <label for="drpProg" style="font-weight: bold">Program:</label>
                                 <select id="mylist2" onchange="myFunction2()" style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
-                                    <option value="">None</option>
+                                    <option value="1">None</option>
                                     <option value="HVC">High Value Crops</option>
                                     <option value="Rice">Rice Crops</option>
                                     <option value="Corn">Corn</option>
@@ -441,138 +408,226 @@ include "personnel_dash_header.php";
                         <table class="table table-hover table-sm" id="myTable">
                             <thead>
                                 <tr>
-                                    <th>Reference No.</th>
+                                    <th>ID</th>
                                     <th>Full Name</th>
-                                    <th>Sex</th>
-                                    <th>Commodity</th>
-                                    <th>Size(HA)</th>
-                                    <th>Barangay</th>
                                     <th>Contact Number</th>
-                                    <th>Accept</th>
-                                    <th>Decline</th>
-                                    <th>View Message</th>
+                                    <th>Birth Date</th>
+                                    <th>Civil Status</th>
+                                    <th>Sex</th>
+                                    <th>Religion</th>
+                                    <th>Place of Birth</th>
+                                    <th>Street/Subdiv/Sitio</th>
+                                    <th>Barangay</th>
+                                    <th>Municipality</th>
+                                    <th>Zipcode</th>
+                                    <th>Guardian Full Name</th>
+                                    <th>Guardian Contact Number</th>
+                                    <th>Farm Type</th>
+                                    <th>Farm Area(Hectare)</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
                                 </tr>
                             </thead>
                             <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>France Perez</td>
+                                        <td>Terry Errold</td>
+                                        <td>09661573159</td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
                                         <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Ayala</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
                                         <td>HVC</td>
                                         <td>1.5</td>
-                                        <td>Ayala</td>
-                                        <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td>Respituto Rompetrapo</td>
+                                        <td>Marky Ruffalo</td>
+                                        <td>09661573159</td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
                                         <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Sinunuc</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
                                         <td>Rice</td>
                                         <td>1.5</td>
-                                        <td>Recodo</td>
-                                        <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
-                                        <td>Jessa Mendoza</td>
+                                        <td>Vanessa Bernardo</td>
+                                        <td>09661573159</td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
                                         <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Baluno</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
                                         <td>HVC</td>
                                         <td>1.5</td>
-                                        <td>Tulungatung</td>
-                                        <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">4</th>
-                                        <td>Vanessa Jane</td>
-                                        <td>Male</td>
-                                        <td>Rice</td>
-                                        <td>1.5</td>
-                                        <td>Recodo</td>
+                                        <td>Jessa Faustina</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Ayala</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>Corn</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">5</th>
-                                        <td>Mary Jane</td>
+                                        <td>Norton Geran</td>
+                                        <td>09661573159</td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
                                         <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Baluno</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
                                         <td>Corn</td>
                                         <td>1.5</td>
-                                        <td>Patalon</td>
-                                        <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">6</th>
-                                        <td>Jenny Santisima</td>
-                                        <td>Male</td>
-                                        <td>Rice</td>
-                                        <td>1.5</td>
-                                        <td>Labuan</td>
+                                        <td>Renato Samson</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Recodo</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>HVC</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">7</th>
-                                        <td>George Hokage</td>
-                                        <td>Male</td>
-                                        <td>Corn</td>
-                                        <td>1.5</td>
-                                        <td>Limpapa</td>
+                                        <td>Robert Sonsona</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Patalon</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>HVC</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">8</th>
-                                        <td>Mark Ruffalo</td>
-                                        <td>Male</td>
-                                        <td>Corn</td>
-                                        <td>1.5</td>
-                                        <td>Limpapa</td>
+                                        <td>Jessa Mendoza</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Ayala</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>Rice</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">9</th>
-                                        <td>Norton Limpapa</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.5</td>
-                                        <td>Recodo</td>
+                                        <td>France Rebollos</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Talisayan</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>Rice</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">10</th>
-                                        <td>Tabs Mercado</td>
-                                        <td>Male</td>
-                                        <td>Rice</td>
-                                        <td>1.5</td>
-                                        <td>Ayala</td>
+                                        <td>Mark Otto</td>
                                         <td>09661573159</td>
-                                        <td><button type="button" class="btn btn-success">Accept</button></td>
-                                        <td><button id="declineB" type="button" class="btn btn-danger btn1">Decline</button></td>
-                                        <td><button type="button" class="btn btn-success btn2">View Message</button></td>
+                                        <td>03/19/1999</td>
+                                        <td>Married</td>
+                                        <td>Male</td>
+                                        <td>Roman Catholic</td>
+                                        <td>Zamboanga City</td>
+                                        <td>Purok 2, Carmerlo Drive</td>
+                                        <td>Limpapa</td>
+                                        <td>District 1</td>
+                                        <td>7000</td>
+                                        <td>Renato Amorsolo</td>
+                                        <td>09674141231</td>
+                                        <td>Corn</td>
+                                        <td>1.5</td>
+                                        <td>markotto123</td>
+                                        <td>otto123</td>
                                     </tr>
                             </tbody>
                         </table>
@@ -582,74 +637,61 @@ include "personnel_dash_header.php";
         </div>
     </div>
     <script>
-function myFunction1() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("mylist1");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[4];
-                if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+
+        function myFunction1() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("mylist1");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[8];
+            if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
             }       
         }
     }
 
-        function myFunction2() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("mylist2");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2];
-                if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+    function myFunction2() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("mylist2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[13];
+            if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
             }
         }
     }
 
     function myFunction3() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
     }
-
-        let elements = Array.from(document.getElementsByClassName('btn1'))
-        for (let element of elements) {
-        element.addEventListener('click', function(){
-            document.querySelector(".popup3").style.display = "flex";
-        })
-      }
-
-      let elements1 = Array.from(document.getElementsByClassName('btn2'))
-        for (let element of elements1) {
-        element.addEventListener('click', function(){
-            document.querySelector(".popup4").style.display = "flex";
-        })
-      }
+}
 
       document.getElementById("viewB").addEventListener("click", function(){
             document.querySelector(".popup").style.display = "flex";
@@ -687,7 +729,6 @@ function myFunction1() {
           document.querySelector(".popup2").style.display = "none";
       })
 
-      
     </script>
 <?php
 include "personnel_dash_footer.php";
