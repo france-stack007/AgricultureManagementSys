@@ -17,6 +17,58 @@ body{
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+.popupDeactCon{
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 120;
+}
+.popup-contentDeactCon{
+    height: auto;
+    width: 400px;
+    background: white;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+.popupDeact{
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 120;
+}
+.popup-contentDeact{
+    height: auto;
+    width: 400px;
+    background: white;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
 .popup4{
     background: rgba(0, 0, 0, 0.6);
     width: 100%;

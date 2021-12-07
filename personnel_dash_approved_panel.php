@@ -5,7 +5,7 @@ include "personnel_dash_header.php";
     <!--sidebar start-->
     <div class="sidebar">
     <center>
-        <img src="img/yinyang.png" class="profile_image" alt="">
+        <img src="img/LOGO.png" class="profile_image" alt="">
         <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
       </center>
       <hr style="color: white">
@@ -19,6 +19,7 @@ include "personnel_dash_header.php";
                   <li><a href="personnel_dash_approved_panel.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
+                  <!-- <li><a href="personnel_dash_deactivate_farmer.php"><i class="fas fa-user-slash"></i><span>Deactivate Farmer</span></a></li> -->
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>
@@ -302,6 +303,61 @@ include "personnel_dash_header.php";
         </div>
     </div>
     <script>
+
+function myFunction1() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("mylist1");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }       
+            }
+        }
+
+        function myFunction2() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("mylist2");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3];
+                if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+        }
+
+        function myFunction3() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
       document.getElementById("viewB").addEventListener("click", function(){
             document.querySelector(".popup").style.display = "flex";
         })
@@ -344,75 +400,104 @@ include "personnel_dash_header.php";
                     <div style="margin: 0 10px 0 0">
                         <!-- <label for="middlename">Program: </label>
                         <input class="inputC" type="text" name="middlename" placeholder="Program" required> -->
-                        <label for="drpProg" style="font-weight: bold">Program:</label>
-                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
-                                <option value="1">Select One</option>
-                                <option value="2">High Value Crops</option>
-                                <option value="3">Rice Crops</option>
-                                <option value="4">Crops</option>
+                        <label for="drpProg" style="font-weight: bold">Requested for:</label>
+                            <select id="mylist1" onchange="myFunction1()" style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
+                                <option value="">None</option>
+                                <option value="HVC">High Value Crops(HVC)</option>
+                                <option value="Rice">Rice Program(Rice)</option>
+                                <option value="Corn">Corn Program(Corn)</option>
+                                <option value="Registration">Registrations</option>
+                                <option value="Service">Services</option>
                             </select>
                     </div>
                     <div style="margin: 0 10px 0 0">
-                        <label for="drpBar" style="font-weight: bold">Barangay:</label>
-                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpBar">
-                                <option value="1">Select One</option>
-                                <option value="2">Zone 1</option>
-                                <option value="3">Zone 2</option>
-                                <option value="4">Zone 3</option>
-                                <option value="5">Zone 4</option>
+                        <label for="drpBar" style="font-weight: bold">Status:</label>
+                            <select id="mylist2" onchange="myFunction2()" style="width: 150px; height: auto; padding: 2.5px" class="drpBar">
+                                <option value="">None</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Declined">Declined</option>
                             </select>
                     </div>
                     <div style="margin: 0 10px 0 0">
                         <label for="middlename" style="font-weight: bold">Search name: </label>
-                        <input class="inputC" type="text" name="middlename" placeholder="Search name" required>
+                        <input id="myInput" onkeyup="myFunction3()" class="inputC" type="text" name="middlename" placeholder="Search name" required>
                     </div>
                 </div>
                 <hr>
                 <div class="table-responsive">
-                    <table class="table table-hover table-sm" id="tableSearch">
-                        <thead>
-                            <tr>
-                            <th>Reference No.</th>
-                            <th>Image</th>
-                            <th>Full Name</th>
-                            <!-- <th>First Name</th>
-                            <th>Middle Name</th> -->
-                            <th>Sex</th>
-                            <th>Commodity</th>
-                            <th>Size(HA)</th>
-                            <th>Barangay</th>
-                            <th>Contact Number</th>
-                            <!-- <th>Username</th>
-                            <th>Password</th>
-                            <th>Role</th>
-                            <th>Status</th> -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $res=mysqli_query($link,"SELECT CONCAT(c.firstname, ' ', c.lastname) AS fullname, c.* FROM user_registration c");
-                            while($row=mysqli_fetch_array($res))
-                            {
-                                    echo "<tr>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; ?> <img src="<?php echo $row["image"]; ?>" height="100" width="100"> <?php echo "</td>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
-                                    // echo "<td>"; echo $row["firstname"]; echo "</td>";
-                                    //echo "<td>"; echo $row["username"]; echo "</td>";
-                                    //echo "<td>"; echo $row["password"]; echo "</td>";
-                                    //echo "<td>"; echo $row["role"]; echo "</td>";
-                                    //echo "<td>"; echo $row["status"]; echo "</td>";
-                                    echo "<td>"; echo $row["username"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+                        <table class="table table-hover table-sm" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Requested for</th>
+                                    <th>Date Requested</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td>France Perez</td>
+                                        <td>Registration</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Respituto Rompetrapo</td>
+                                        <td>Rice</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jessa Mendoza</td>
+                                        <td>Service</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: red"><h4>Declined</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vanessa Jane</td>
+                                        <td>HVC</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mary Jane</td>
+                                        <td>Corn</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenny Santisima</td>
+                                        <td>Registration</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>George Hokage</td>
+                                        <td>Rice</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark Ruffalo</td>
+                                        <td>Registration</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: red"><h4>Declined</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Norton Limpapa</td>
+                                        <td>Service</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tabs Mercado</td>
+                                        <td>HVC</td>
+                                        <td>12/3/2019</td>
+                                        <td><em style="color: green"><h4>Approved</h4></em></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
             </div>
         </div>
     </div>

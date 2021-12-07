@@ -5,7 +5,7 @@ include "personnel_dash_header.php";
     <!--sidebar start-->
     <div class="sidebar">
       <center>
-        <img src="img/yinyang.png" class="profile_image" alt="">
+        <img src="img/LOGO.png" class="profile_image" alt="">
         <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
       </center>
       <hr style="color: white">
@@ -19,6 +19,7 @@ include "personnel_dash_header.php";
                   <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
+                  <!-- <li><a href="personnel_dash_deactivate_farmer.php"><i class="fas fa-user-slash"></i><span>Deactivate Farmer</span></a></li> -->
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>

@@ -5,7 +5,7 @@ include "personnel_dash_header.php";
     <!--sidebar start-->
     <div class="sidebar">
     <center>
-        <img src="img/yinyang.png" class="profile_image" alt="">
+        <img src="img/LOGO.png" class="profile_image" alt="">
         <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
         <!-- <a href="#" id="declineB"><button class="btn btn-danger">Decline</button></a> -->
       </center>
@@ -20,6 +20,7 @@ include "personnel_dash_header.php";
                   <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
+                  <!-- <li><a href="personnel_dash_deactivate_farmer.php"><i class="fas fa-user-slash"></i><span>Deactivate Farmer</span></a></li> -->
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>
@@ -408,9 +409,11 @@ include "personnel_dash_header.php";
                             <label for="drpProg" style="font-weight: bold">Program:</label>
                                 <select id="mylist2" onchange="myFunction2()" style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
                                     <option value="">None</option>
-                                    <option value="HVC">High Value Crops</option>
-                                    <option value="Rice">Rice Crops</option>
-                                    <option value="Corn">Corn</option>
+                                    <option value="HVC">High Value Crops(HVC)</option>
+                                    <option value="Rice">Rice Program(Rice)</option>
+                                    <option value="Corn">Corn Program(Corn)</option>
+                                    <option value="Registration">Registrations</option>
+                                    <option value="Service">Services</option>
                                 </select>
                         </div>
                         <div style="margin: 0 10px 0 0">
@@ -450,7 +453,7 @@ include "personnel_dash_header.php";
                                     <th>Contact Number</th>
                                     <th>Accept</th>
                                     <th>Decline</th>
-                                    <th>View Message</th>
+                                    <th>Purpose of request</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -458,7 +461,7 @@ include "personnel_dash_header.php";
                                         <th scope="row">1</th>
                                         <td>France Perez</td>
                                         <td>Male</td>
-                                        <td>HVC</td>
+                                        <td>Registration</td>
                                         <td>1.5</td>
                                         <td>Ayala</td>
                                         <td>09661573159</td>
@@ -494,7 +497,7 @@ include "personnel_dash_header.php";
                                         <th scope="row">4</th>
                                         <td>Vanessa Jane</td>
                                         <td>Male</td>
-                                        <td>Rice</td>
+                                        <td>Service</td>
                                         <td>1.5</td>
                                         <td>Recodo</td>
                                         <td>09661573159</td>
@@ -530,7 +533,7 @@ include "personnel_dash_header.php";
                                         <th scope="row">7</th>
                                         <td>George Hokage</td>
                                         <td>Male</td>
-                                        <td>Corn</td>
+                                        <td>Service</td>
                                         <td>1.5</td>
                                         <td>Limpapa</td>
                                         <td>09661573159</td>
@@ -542,7 +545,7 @@ include "personnel_dash_header.php";
                                         <th scope="row">8</th>
                                         <td>Mark Ruffalo</td>
                                         <td>Male</td>
-                                        <td>Corn</td>
+                                        <td>Registration</td>
                                         <td>1.5</td>
                                         <td>Limpapa</td>
                                         <td>09661573159</td>
@@ -566,7 +569,7 @@ include "personnel_dash_header.php";
                                         <th scope="row">10</th>
                                         <td>Tabs Mercado</td>
                                         <td>Male</td>
-                                        <td>Rice</td>
+                                        <td>Registration</td>
                                         <td>1.5</td>
                                         <td>Ayala</td>
                                         <td>09661573159</td>

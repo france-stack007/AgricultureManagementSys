@@ -5,7 +5,7 @@ include "personnel_dash_header.php";
     <!--sidebar start-->
     <div class="sidebar bg-dark">
       <center>
-        <img src="img/yinyang.png" class="profile_image" alt="">
+        <img src="img/LOGO.png" class="profile_image" alt="">
         <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
       </center>
       <hr style="color: white">

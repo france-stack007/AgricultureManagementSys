@@ -11,7 +11,7 @@ include "personnel_dash_header.php";
       <hr style="color: white">
         <nav class="nav1">
           <ul>
-            <li><a href="personnel_dash_body.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-desktop"></i><span>Dashboard</span></a></li>
+            <li><a href="personnel_dash_body.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a></li>
             <li class="dropdown">
               <a href="#"><i class="fas fa-cogs"></i><span>Features</span></a>
               <ul>
@@ -19,7 +19,7 @@ include "personnel_dash_header.php";
                   <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
-                  <!-- <li><a href="personnel_dash_deactivate_farmer.php"><i class="fas fa-user-slash"></i><span>Deactivate Farmer</span></a></li> -->
+                  <li><a href="personnel_dash_deactivate_farmer.php"  style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-user-slash"></i><span>Deactivate Farmer</span></a></li>
               </ul>
             </li>
             <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>
@@ -302,92 +302,74 @@ include "personnel_dash_header.php";
             </div>
         </div>
     </div>
-    <script>
-
-    function myFunction1() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("mylist1");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[8];
-                if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-                }       
-            }
-        }
-
-        function myFunction2() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("mylist2");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[13];
-                if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-                }
-            }
-        }
-
-        function myFunction3() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-      document.getElementById("viewB").addEventListener("click", function(){
-            document.querySelector(".popup").style.display = "flex";
-        })
-
-      document.getElementById("closeB").addEventListener("click", function(){
-          document.querySelector(".popup").style.display = "none";
-      })
-      document.getElementById("nextB").addEventListener("click", function(){
-            document.querySelector(".popup1").style.display = "flex";
-            document.querySelector(".popup").style.display = "none";
-        })
-      document.getElementById("backB").addEventListener("click", function(){
-            document.querySelector(".popup1").style.display = "none";
-            document.querySelector(".popup").style.display = "flex";
-        })
-      document.getElementById("close1B").addEventListener("click", function(){
-          document.querySelector(".popup1").style.display = "none";
-      })
-      document.getElementById("next1B").addEventListener("click", function(){
-            document.querySelector(".popup2").style.display = "flex";
-            document.querySelector(".popup1").style.display = "none";
-        })
-        document.getElementById("back1B").addEventListener("click", function(){
-            document.querySelector(".popup2").style.display = "none";
-            document.querySelector(".popup1").style.display = "flex";
-        })
-        document.getElementById("close2B").addEventListener("click", function(){
-          document.querySelector(".popup2").style.display = "none";
-      })
-    </script>
+    <div class="popupDeact">
+        <div class="popup-contentDeact">
+            <div class="popup-child4">
+                    <form role="form">
+                        <hr class="colorgraph" style="height: 10px">
+                        <div class="formG" style="display: flex; flex-direction: row; gap: 40px; justify-content: center">
+                            <div style="width: 100%">
+                            <br>
+                            <h5>Deactivate Account</h5>
+                            <hr>
+                            <div class="row" style="text-align: left; display: flex; justify-content: center">
+                                <div class="row">
+                                  <div class="col-xs-12 col-sm-6 col-md-12" style="margin: 10px 0 10px; ">
+                                    <h4>Would you like to deactivate the account of "Respituto, Rompetrapu"?</h4>
+                                  </div>
+                                </div>
+                            </div>
+                                <br>
+                                <div class="column" style="text-align: center">
+                                    <a href="#" id="verPass"><button type="button" class="btn btn-success" style="width: 25%">Yes</button></a>
+                                    <a href=""><button type="button" class="btn btn-danger" style="width: 25%" id="submitBx">No</button></a>
+                                </div>
+                                <hr class="colorgraph" style="height: 10px">
+                            </div>
+                        </div>
+                    </form>
+                <!-- </div> -->
+            </div>
+            <div class="popup-child2">
+                <a type="button" href="" id="closeBDeact" class="btn btn-success" style="position:absolute; top:0; right:0; text-decoration: none; z-index: 1; cursor: pointer; border-radius: 5em">X</a>
+            </div>
+        </div>
+    </div>
+    <div class="popupDeactCon">
+        <div class="popup-contentDeactCon">
+            <div class="popup-child4">
+                    <form role="form">
+                        <hr class="colorgraph" style="height: 10px">
+                        <div class="formG" style="display: flex; flex-direction: row; gap: 40px; justify-content: center">
+                            <div style="width: 100%">
+                            <br>
+                            <h5>Deactivate Account</h5>
+                            <hr>
+                            <div class="row" style="text-align: left; display: flex; justify-content: center">
+                                <div class="column">
+                                  <div class="col-xs-12 col-sm-12 col-md-12" style="margin: 10px 0 10px; ">
+                                    <div class="form-group">
+                                            <label for="password_confirmation">Verify Password:</label>
+                                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Verify Password">
+                                        </div>
+                                  </div>
+                                </div>
+                            </div>
+                                <br>
+                                <div class="column" style="text-align: center">
+                                    <a href=""><button type="button" class="btn btn-success" style="width: 100%" id="back1B">Confirm</button></a>
+                                </div>
+                                <hr class="colorgraph" style="height: 10px">
+                            </div>
+                        </div>
+                    </form>
+                <!-- </div> -->
+            </div>
+            <div class="popup-child2">
+                <a type="button" href="" id="closeBDeactCon" class="btn btn-success" style="position:absolute; top:0; right:0; text-decoration: none; z-index: 1; cursor: pointer; border-radius: 5em">X</a>
+            </div>
+        </div>
+    </div>
   <div class="content">
   <div class="container-fluid">
       <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
@@ -395,127 +377,128 @@ include "personnel_dash_header.php";
               <div class="printGrp" style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-end; border: 2px solid black;
                   padding: 15px 0 15px 0; margin-top: 10px; flex-wrap: wrap; background-color: rgba(0, 128, 0, 0.7); position: relative; z-index: 0">
                   <div style="left: 10px; position: absolute">
-                      <h3>Search Request</h3>
+                      <h3>Deactivate Farmers Account</h3>
                     </div>
-                      <div style="margin: 0 10px 0 0">
-                          <a href="#"><button class="logout_btn" style="margin: 0 10px 0 0; border-radius: 3px; width: 100%">Print</button></a>
-                      </div>
+                        <div style="margin: 0 10px 0 0">
+                            <label for="middlename" style="font-weight: bold">Search name: </label>
+                            <input id="myInput" onkeyup="myFunction3()" class="inputC" type="text" name="middlename" placeholder="Search name" required>
+                        </div>
                   </div>
                   <hr>
                   <div class="table-responsive">
-                      <table class="table table-hover table-sm" id="tableSearch">
-                          <thead>
-                              <tr>
-                              <th>Reference ID</th>
-                              <th>Image</th>
-                              <th>Full Name</th>
-                              <th>Sex</th>
-                              <th>Commodity</th>
-                              <th>Size(HA)</th>
-                              <th>Barangay</th>
-                              <th>Contact Number</th>
-                              </tr>
-                          </thead>
-                          <tbody>
+                      <table class="table table-hover table-sm" id="myTable">
+                      <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>FirstName</th>
+                                    <th>MiddleName</th>
+                                    <th>LastName</th>
+                                    <th>Date Active</th>
+                                    <th>Role</th>
+                                    <th>Deactivate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                     <tr>
                                         <th scope="row">1</th>
                                         <td><img src="./img/prof1.jpg" height="100" width="100"></td>
-                                        <td>France Perez</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.9</td>
-                                        <td>Ayala</td>
-                                        <td>09661574168</td>
+                                        <td>Anthony</td>
+                                        <td>Termulo</td>
+                                        <td>Silencio</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td><img src="./img/prof2.jpg" height="100" width="100"></td>
-                                        <td>Respituto Rompetrapo</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.7</td>
-                                        <td>Ayala</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof4.jpg" height="100" width="100"></td>
+                                        <td>Noel</td>
+                                        <td>Ricarda</td>
+                                        <td>Cruz</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
-                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
-                                        <td>Jessa Mendoza</td>
-                                        <td>Female</td>
-                                        <td>HVC</td>
-                                        <td>1.5</td>
-                                        <td>Ayala</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof1.jpg" height="100" width="100"></td>
+                                        <td>Steph</td>
+                                        <td>Medina</td>
+                                        <td>Samson</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">4</th>
-                                        <td><img src="./img/prof4.jpg" height="100" width="100"></td>
-                                        <td>Vanessa Jane</td>
-                                        <td>Female</td>
-                                        <td>HVC</td>
-                                        <td>1.0</td>
-                                        <td>Baluno</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
+                                        <td>Pepe</td>
+                                        <td>Lagrimas</td>
+                                        <td>Saturno</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">5</th>
-                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
-                                        <td>Mary Jane</td>
-                                        <td>Female</td>
-                                        <td>HVC</td>
-                                        <td>0.5</td>
-                                        <td>Patalon</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof4.jpg" height="100" width="100"></td>
+                                        <td>Mark</td>
+                                        <td>Redondo</td>
+                                        <td>Pelaez</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">6</th>
                                         <td><img src="./img/prof2.jpg" height="100" width="100"></td>
-                                        <td>Jenny Santisima</td>
-                                        <td>Female</td>
-                                        <td>HVC</td>
-                                        <td>1.5</td>
-                                        <td>Limpapa</td>
-                                        <td>09661574168</td>
+                                        <td>Jobert</td>
+                                        <td>Mendoza</td>
+                                        <td>Francisco</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">7</th>
-                                        <td><img src="./img/prof1.jpg" height="100" width="100"></td>
-                                        <td>George Hokage</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.2</td>
-                                        <td>Ayala</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
+                                        <td>Helbert</td>
+                                        <td>Reyes</td>
+                                        <td>Quintos</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">8</th>
-                                        <td><img src="./img/prof4.jpg" height="100" width="100"></td>
-                                        <td>Mark Ruffalo</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.5</td>
-                                        <td>Recodo</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof1.jpg" height="100" width="100"></td>
+                                        <td>Errold</td>
+                                        <td>Marriscota</td>
+                                        <td>Spence</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">9</th>
-                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
-                                        <td>Norton Limpapa</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.7</td>
-                                        <td>Ayala</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof2.jpg" height="100" width="100"></td>
+                                        <td>Frank</td>
+                                        <td>Sentino</td>
+                                        <td>Remulo</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">10</th>
-                                        <td><img src="./img/prof2.jpg" height="100" width="100"></td>
-                                        <td>Tabs Mercado</td>
-                                        <td>Male</td>
-                                        <td>HVC</td>
-                                        <td>1.0</td>
-                                        <td>Recodo</td>
-                                        <td>09661574168</td>
+                                        <td><img src="./img/prof3.jpg" height="100" width="100"></td>
+                                        <td>Robert</td>
+                                        <td>Mehares</td>
+                                        <td>Sanson</td>
+                                        <td>04/4/2018</td>
+                                        <td>Farmer</td>
+                                        <td><button id="declineB" type="button" class="btn btn-danger btn3">Deactivate</button></td>
                                     </tr>
                             </tbody>
                       </table>
@@ -524,6 +507,67 @@ include "personnel_dash_header.php";
             </div>
         </div>
     </div>
+<script>
+
+    function myFunction3() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+let elements = Array.from(document.getElementsByClassName('btn3'))
+        for (let element of elements) {
+        element.addEventListener('click', function(){
+            document.querySelector(".popupDeact").style.display = "flex";
+        })
+      }
+
+  document.getElementById("viewB").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "flex";
+    })
+
+  document.getElementById("closeB").addEventListener("click", function(){
+      document.querySelector(".popup").style.display = "none";
+  })
+  document.getElementById("nextB").addEventListener("click", function(){
+        document.querySelector(".popup1").style.display = "flex";
+        document.querySelector(".popup").style.display = "none";
+    })
+  document.getElementById("backB").addEventListener("click", function(){
+        document.querySelector(".popup1").style.display = "none";
+        document.querySelector(".popup").style.display = "flex";
+    })
+  document.getElementById("close1B").addEventListener("click", function(){
+      document.querySelector(".popup1").style.display = "none";
+  })
+  document.getElementById("next1B").addEventListener("click", function(){
+        document.querySelector(".popup2").style.display = "flex";
+        document.querySelector(".popup1").style.display = "none";
+    })
+    document.getElementById("back1B").addEventListener("click", function(){
+        document.querySelector(".popup2").style.display = "none";
+        document.querySelector(".popup1").style.display = "flex";
+    })
+    document.getElementById("close2B").addEventListener("click", function(){
+      document.querySelector(".popup2").style.display = "none";
+  })
+  document.getElementById("verPass").addEventListener("click", function(){
+      document.querySelector(".popupDeact").style.display = "none";
+      document.querySelector(".popupDeactCon").style.display = "flex";
+  })
+</script>
 <?php
 include "personnel_dash_footer.php";
 ?>
