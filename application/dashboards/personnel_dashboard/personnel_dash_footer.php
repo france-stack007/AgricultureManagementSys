@@ -1,6 +1,3 @@
-<?php
-include "connection.php";
-?>
 <script>
   //  document.getElementById("declineB").addEventListener("click", function(){
   //         document.querySelector(".popup3").style.display = "flex";

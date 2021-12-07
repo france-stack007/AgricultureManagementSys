@@ -1,12 +1,11 @@
 <?php
-include "connection.php";
 include "personnel_dash_header.php";
 ?>
     <!--sidebar start-->
     <div class="sidebar">
-      <center>
+    <center>
         <img src="img/yinyang.png" class="profile_image" alt="">
-        <a href="personnel_dash_profile.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-user"></i><span class="prof" style="color: rgba(0, 255, 0, 0.8)">Profile</span></a>
+        <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
       </center>
       <hr style="color: white">
       <nav class="nav1">
@@ -16,7 +15,7 @@ include "personnel_dash_header.php";
               <a href="#"><i class="fas fa-cogs"></i><span>Features</span></a>
               <ul>
                   <li><a href="personnel_dash_farmers_request.php"><i class="fas fa-user-edit"></i><span>Farmers Request</span></a></li>
-                  <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
+                  <li><a href="personnel_dash_approved_panel.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
               </ul>
@@ -333,107 +332,90 @@ include "personnel_dash_header.php";
       })
     </script>
     <div class="content">
-    <br>
-        <hr>
-        <div class="container" style="background-color: rgba(0,128,0, 0.1); padding-right: 30px">
-            <br>
-                <div class="row" id="main">
-                    <div class="col-md-4 well" id="leftPanel">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div>
-                                    <img src="./img/prof1.jpg" width="250" height="auto" alt="Texto Alternativo" class="img-circle img-thumbnail" style="border-radius: 10em; margin-top: 50px">
-                                    <h2>Jethro Guerrero</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="btn-group" style="padding-bottom: 10px">
-                                        <button type="button" class="btn btn-info">
-                                        Field Officer</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container-fluid">
+      <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
+          <div class="span12">
+            <div class="printGrp" style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-end; border: 2px solid black;
+                padding: 15px 0 15px 0; margin-top: 10px; flex-wrap: wrap; background-color: rgba(0, 128, 0, 0.7); position: relative">
+                <div style="left: 10px; position: absolute">
+                    <h3>Approved Panel</h3>
+                </div>
+                    <div style="margin: 0 10px 0 0">
+                        <!-- <label for="middlename">Program: </label>
+                        <input class="inputC" type="text" name="middlename" placeholder="Program" required> -->
+                        <label for="drpProg" style="font-weight: bold">Program:</label>
+                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
+                                <option value="1">Select One</option>
+                                <option value="2">High Value Crops</option>
+                                <option value="3">Rice Crops</option>
+                                <option value="4">Crops</option>
+                            </select>
                     </div>
-                <div class="col-md-8 well" id="rightPanel">
-            <div class="row">
-                <div class="col-md-12" style="margin: 35px 0 0 10px;">
-                    <form role="form">
-                    <h3>Edit Profile</h3>
-                        <hr class="colorgraph" style="height: 10px">
-                        <div class="formG" style="display: flex; flex-direction: row; gap: 40px; justify-content: center">
-                            <div style="width: 100%">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                            <label for="first_name">Name:</label>
-                                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" tabindex="1" value="Josie A. Katigbag" style="text-align: center">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                        <label for="last_name">Address:</label>
-                                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" tabindex="2" value="Recodo Zamboanga City" style="text-align: center">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                            <label for="password">Age:</label>
-                                            <input type="text" name="password" id="password" class="form-control input-lg" tabindex="5" value="69" style="text-align: center">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                            <label for="password_confirmation">Contact Number:</label>
-                                            <input type="number" name="password_confirmation" id="password_confirmation" class="form-control input-lg" tabindex="6" value="09067982233" style="text-align: center">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="inputC">
-                                            <label for="start">Birth Date:</label>
-                                            <input type="date" id="start" name="trip-start"
-                                                value="2000-01-01"
-                                                min="1900-01-01" max="2050-12-31" style="width: 100%" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                        <label for="selectD">Sex:</label>
-                                            <select class="selectD" style="width: 100%; height: auto; margin: 0; padding: 2px; border-radius: 3px">
-                                                <option>Choose Sex</option>
-                                                <option  selected value="1">Male</option>
-                                                <option value="2">Female</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                            <label for="first_name">Program:</label>
-                                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" tabindex="1" value="Field Officer" style="text-align: center" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
-                                        <div class="form-group">
-                                        <label for="last_name">Email Address:</label>
-                                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" tabindex="2" value="josie@yahoo.com" style="text-align: center" >
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <div style="display: flex; justify-content: center">
-                            <a href="#" id="printB"><button class="btn btn-success" style="margin: 0 10px 10px 0; width: 100%">Update</button></a>
-                        </div>
-                        <hr class="colorgraph" style="height: 10px; margin-bottom: 20px">
-                        </div>
-                    </form>
+                    <div style="margin: 0 10px 0 0">
+                        <label for="drpBar" style="font-weight: bold">Barangay:</label>
+                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpBar">
+                                <option value="1">Select One</option>
+                                <option value="2">Zone 1</option>
+                                <option value="3">Zone 2</option>
+                                <option value="4">Zone 3</option>
+                                <option value="5">Zone 4</option>
+                            </select>
+                    </div>
+                    <div style="margin: 0 10px 0 0">
+                        <label for="middlename" style="font-weight: bold">Search name: </label>
+                        <input class="inputC" type="text" name="middlename" placeholder="Search name" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm" id="tableSearch">
+                        <thead>
+                            <tr>
+                            <th>Reference No.</th>
+                            <th>Image</th>
+                            <th>Full Name</th>
+                            <!-- <th>First Name</th>
+                            <th>Middle Name</th> -->
+                            <th>Sex</th>
+                            <th>Commodity</th>
+                            <th>Size(HA)</th>
+                            <th>Barangay</th>
+                            <th>Contact Number</th>
+                            <!-- <th>Username</th>
+                            <th>Password</th>
+                            <th>Role</th>
+                            <th>Status</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $res=mysqli_query($link,"SELECT CONCAT(c.firstname, ' ', c.lastname) AS fullname, c.* FROM user_registration c");
+                            while($row=mysqli_fetch_array($res))
+                            {
+                                    echo "<tr>";
+                                    echo "<td>"; echo $row["id"]; echo "</td>";
+                                    echo "<td>"; ?> <img src="<?php echo $row["image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    // echo "<td>"; echo $row["firstname"]; echo "</td>";
+                                    //echo "<td>"; echo $row["username"]; echo "</td>";
+                                    //echo "<td>"; echo $row["password"]; echo "</td>";
+                                    //echo "<td>"; echo $row["role"]; echo "</td>";
+                                    //echo "<td>"; echo $row["status"]; echo "</td>";
+                                    echo "<td>"; echo $row["username"]; echo "</td>";
+                                    echo "<td>"; echo $row["id"]; echo "</td>";
+                                    echo "<td>"; echo $row["id"]; echo "</td>";
+                                    echo "<td>"; echo $row["id"]; echo "</td>";
+                                    echo "<td>"; echo $row["id"]; echo "</td>";
+                                    echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-</div>
+    </div>
+    
 <?php
 include "personnel_dash_footer.php";
 ?>

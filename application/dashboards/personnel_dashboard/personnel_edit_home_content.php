@@ -1,10 +1,29 @@
 <?php
-include "connection.php";
 include "personnel_dash_header.php";
+
+$id=$_GET["id"];
+
+$content11="";
+$content12="";
+$content21="";
+$content22="";
+$content31="";
+$content32="";
+
+$res = mysqli_query($link,"SELECT * FROM home_content WHERE id=$id");
+while($row=mysqli_fetch_array($res))
+{
+    $content11=$row["content11"];
+    $content12=$row["content12"];
+    $content21=$row["content21"];
+    $content22=$row["content22"];
+    $content31=$row["content31"];
+    $content32=$row["content32"];
+}
 ?>
     <!--sidebar start-->
     <div class="sidebar">
-    <center>
+      <center>
         <img src="img/yinyang.png" class="profile_image" alt="">
         <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
       </center>
@@ -16,7 +35,7 @@ include "personnel_dash_header.php";
               <a href="#"><i class="fas fa-cogs"></i><span>Features</span></a>
               <ul>
                   <li><a href="personnel_dash_farmers_request.php"><i class="fas fa-user-edit"></i><span>Farmers Request</span></a></li>
-                  <li><a href="personnel_dash_approved_panel.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
+                  <li><a href="personnel_dash_approved_panel.php"><i class="fas fa-thumbs-up"></i><span>Approved Panel</span></a></li>
                   <li><a href="#" id="viewB"><i class="fas fa-user-plus"></i><span>Add Farmer</span></a></li>
                   <li><a href="personnel_dash_farmers_list.php"><i class="far fa-address-book"></i><span>Farmers List</span></a></li>
               </ul>
@@ -31,7 +50,7 @@ include "personnel_dash_header.php";
               <a href="#"><i class="fas fa-tools"></i><span>Home Features</span></a>
               <ul>
                   <li><a href="personnel_dash_home_image.php"><i class="fas fa-wrench"></i><span>Customized Home Image</span></a></li>
-                  <li><a href="personnel_dash_home_content.php"><i class="fas fa-wrench"></i><span>Customized Home Content</span></a></li>
+                  <li><a href="personnel_dash_home_content.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-wrench"></i><span>Customized Home Content</span></a></li>
               </ul>
             </li>
         </ul>
@@ -333,90 +352,92 @@ include "personnel_dash_header.php";
       })
     </script>
     <div class="content">
-    <div class="container-fluid">
-      <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
-          <div class="span12">
-            <div class="printGrp" style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-end; border: 2px solid black;
-                padding: 15px 0 15px 0; margin-top: 10px; flex-wrap: wrap; background-color: rgba(0, 128, 0, 0.7); position: relative">
-                <div style="left: 10px; position: absolute">
-                    <h3>Approved Panel</h3>
-                </div>
-                    <div style="margin: 0 10px 0 0">
-                        <!-- <label for="middlename">Program: </label>
-                        <input class="inputC" type="text" name="middlename" placeholder="Program" required> -->
-                        <label for="drpProg" style="font-weight: bold">Program:</label>
-                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpProg">
-                                <option value="1">Select One</option>
-                                <option value="2">High Value Crops</option>
-                                <option value="3">Rice Crops</option>
-                                <option value="4">Crops</option>
-                            </select>
+        <br>
+    <h3>Customize Home Contents</h3>
+        <hr>
+        <div class="container-fluid">
+            <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
+                <div class="span12">
+                  <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
                     </div>
-                    <div style="margin: 0 10px 0 0">
-                        <label for="drpBar" style="font-weight: bold">Barangay:</label>
-                            <select style="width: 150px; height: auto; padding: 2.5px" class="drpBar">
-                                <option value="1">Select One</option>
-                                <option value="2">Zone 1</option>
-                                <option value="3">Zone 2</option>
-                                <option value="4">Zone 3</option>
-                                <option value="5">Zone 4</option>
-                            </select>
-                    </div>
-                    <div style="margin: 0 10px 0 0">
-                        <label for="middlename" style="font-weight: bold">Search name: </label>
-                        <input class="inputC" type="text" name="middlename" placeholder="Search name" required>
+
+                    <div class="widget-content nopadding">
+                    <form name="form1" action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        
+                    <div class="control-group">
+                            <label class="control-label">First Slide 1st Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contOne" value="<?php echo $content11; ?>" required/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">First Slide 2nd Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contTwo" value="<?php echo $content12; ?>" required/>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">Second Slide 1st Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contThree" value="<?php echo $content21; ?>" required/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Second Slide 2nd Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contFour" value="<?php echo $content22; ?>" required/>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Third Slide 1st Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contFive" value="<?php echo $content31; ?>" required/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Third Slide 2nd Tag :</label>
+                            <div class="controls">
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contSix" value="<?php echo $content32; ?>" required/>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" id="error" style="display: none;">
+                                <strong>Warning!</strong> User Already Exist! Please Try Another.
+                        </div>
+                        
+                        <div class="form-actions" style="display: flex; justify-content: center; margin: 20px">
+                            <button type="submit" name="update" class="btn btn-success" style="width: 25%">Update</button>
+                        </div>
+                        
+                        <div class="alert alert-success" id="success" style="display: none;">
+                                <strong>Success!</strong> Record Inserted Successfully.
+                        </div>
+                    </form>
                     </div>
                 </div>
-                <hr>
-                <div class="table-responsive">
-                    <table class="table table-hover table-sm" id="tableSearch">
-                        <thead>
-                            <tr>
-                            <th>Reference No.</th>
-                            <th>Image</th>
-                            <th>Full Name</th>
-                            <!-- <th>First Name</th>
-                            <th>Middle Name</th> -->
-                            <th>Sex</th>
-                            <th>Commodity</th>
-                            <th>Size(HA)</th>
-                            <th>Barangay</th>
-                            <th>Contact Number</th>
-                            <!-- <th>Username</th>
-                            <th>Password</th>
-                            <th>Role</th>
-                            <th>Status</th> -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $res=mysqli_query($link,"SELECT CONCAT(c.firstname, ' ', c.lastname) AS fullname, c.* FROM user_registration c");
-                            while($row=mysqli_fetch_array($res))
-                            {
-                                    echo "<tr>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; ?> <img src="<?php echo $row["image"]; ?>" height="100" width="100"> <?php echo "</td>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
-                                    // echo "<td>"; echo $row["firstname"]; echo "</td>";
-                                    //echo "<td>"; echo $row["username"]; echo "</td>";
-                                    //echo "<td>"; echo $row["password"]; echo "</td>";
-                                    //echo "<td>"; echo $row["role"]; echo "</td>";
-                                    //echo "<td>"; echo $row["status"]; echo "</td>";
-                                    echo "<td>"; echo $row["username"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "<td>"; echo $row["id"]; echo "</td>";
-                                    echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+          </div>
     </div>
-    
+<?php
+if(isset($_POST["update"]))
+{
+
+  mysqli_query($link, "UPDATE home_content SET content11='$_POST[contOne]', content12='$_POST[contTwo]', content21='$_POST[contThree]', content22='$_POST[contFour]', content31='$_POST[contFive]', content32='$_POST[contSix]' WHERE id=$id");
+
+  ?>
+    <script type="text/javascript">
+    document.getElementById("error").style.display="none";
+    document.getElementById("success").style.display="block";
+    setTimeout(function(){
+        window.location.href=window.location.href;
+        window.location="personnel_dash_home_content.php";
+    }, 3000);
+    </script>
+  <?php
+}
+?>
+</div>
 <?php
 include "personnel_dash_footer.php";
 ?>

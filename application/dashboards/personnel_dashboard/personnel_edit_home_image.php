@@ -1,6 +1,19 @@
 <?php
-include "connection.php";
 include "personnel_dash_header.php";
+
+$id=$_GET["id"];
+
+$image1="";
+$image2="";
+$image3="";
+
+$res = mysqli_query($link,"SELECT * FROM home_imgs WHERE id=$id");
+while($row=mysqli_fetch_array($res))
+{
+    $image1=$row["image1"];
+    $image2=$row["image2"];
+    $image3=$row["image3"];
+}
 ?>
     <!--sidebar start-->
     <div class="sidebar">
@@ -30,8 +43,8 @@ include "personnel_dash_header.php";
             <li class="dropdown">
               <a href="#"><i class="fas fa-tools"></i><span>Home Features</span></a>
               <ul>
-                  <li><a href="personnel_dash_home_image.php"><i class="fas fa-wrench"></i><span>Customized Home Image</span></a></li>
-                  <li><a href="personnel_dash_home_content.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-wrench"></i><span>Customized Home Content</span></a></li>
+                  <li><a href="personnel_dash_home_image.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-wrench"></i><span>Customized Home Image</span></a></li>
+                  <li><a href="personnel_dash_home_content.php"><i class="fas fa-wrench"></i><span>Customized Home Content</span></a></li>
               </ul>
             </li>
         </ul>
@@ -333,121 +346,138 @@ include "personnel_dash_header.php";
       })
     </script>
     <div class="content">
-    <br>
-    <h3>Customize Home Contents</h3>
-        <hr>
-        <div class="container-fluid">
+    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+     <br>
+     <h3>Customize Home Images</h3>
+     <hr>
+    <div class="container-fluid">
             <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
                 <div class="span12">
-                <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    </div>
+                    <div class="widget-box">
+                      
+                      <div class="widget-content nopadding">
+                        <form name="form1" action="" method="post" class="form-horizontal" enctype="multipart/form-data">
 
-                    <div class="widget-content nopadding">
-                    <form name="form1" action="" method="post" class="form-horizontal" enctype="multipart/form-data">
-                        
-                    <div class="control-group">
-                            <label class="control-label">First Slide 1st Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="firsttag1" required/>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">First Slide 2nd Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="firsttag2" required/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label">Second Slide 1st Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="secondtag1" required/>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">Second Slide 2nd Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="secondtag2" required/>
-                            </div>
-                        </div>
+                        <div style="display: flex; justify-content: center; margin: 20px; gap: 20px; flex-direction: column">
+                            <div class="control-group">
+                                <label class="control-label">Image1 :</label>
+                                <div class="controls">
+                                    <img src="<?php echo $image1;?>" height="100" width="200" name="image1" style="margin-left: 200px;">
+                                </div>
+                              </div>
+                            
+                              <div class="control-group">
+                                <label class="control-label">Image2 :</label>
+                                <div class="controls">
+                                    <img src="<?php echo $image2;?>" height="100" width="200" name="image2" style="margin-left: 200px;">
+                                </div>
+                              </div>
 
-                        <div class="control-group">
-                            <label class="control-label">Third Slide 1st Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="thirdtag1" required/>
-                            </div>
+                              <div class="control-group">
+                                <label class="control-label">Image3 :</label>
+                                <div class="controls">
+                                    <img src="<?php echo $image3;?>" height="100" width="200" name="image3" style="margin-left: 200px;">
+                                </div>
+                              </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label">Third Slide 2nd Tag :</label>
-                            <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="thirdtag2" required/>
-                            </div>
-                        </div>
+                        
                         <div class="alert alert-danger" id="error" style="display: none;">
-                                <strong>Warning!</strong> User Already Exist! Please Try Another.
+                            <strong>Warning!</strong> Please Enter a file!
                         </div>
-                        
-                        <div class="form-actions" style="display: flex; justify-content: center; margin: 20px">
-                            <button type="submit" name="submit1" class="btn btn-success" style="width: 25%">Save</button>
-                        </div>
-                        
-                        <div class="alert alert-success" id="success" style="display: none;">
-                                <strong>Success!</strong> Record Inserted Successfully.
-                        </div>
-                    </form>
-                    </div>
+
+                          <div class="control-group">
+                            <label class="control-label">Image1 :</label>
+                            <div class="controls">
+                              <input type="file" class="form-control span11" name="img1"/>
+                            </div>
+                          </div>
+
+                          <div class="control-group">
+                            <label class="control-label">Image2 :</label>
+                            <div class="controls">
+                              <input type="file" class="form-control span11" name="img2"/>
+                            </div>
+                          </div>
+
+                          <div class="control-group">
+                            <label class="control-label">Image3 :</label>
+                            <div class="controls">
+                              <input type="file" class="form-control span11" name="img3"/>
+                            </div>
+                          </div>
+
+                          <div class="form-actions" style="display: flex; justify-content: center; margin: 20px">
+                            <button type="submit" name="update1" class="btn btn-success" style="width: 25%">Update</button>
+                          </div>
+                          
+                          <div class="alert alert-success" id="success" style="display: none;">
+                              <strong>Success!</strong> Record Inserted Successfully.
+                          </div>
+                        </form>
+                      </div>
                 </div>
-                <div class="widget-content nopadding">
-                        <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                            <th>content1.1</th>
-                            <th>content1.2</th>
-                            <th>content2.1</th>
-                            <th>content2.2</th>
-                            <th>content3.1</th>
-                            <th>content3.2</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $res=mysqli_query($link,"SELECT * FROM home_content");
-                            while($row=mysqli_fetch_array($res))
-                            {
-                                    echo "<tr>";
-                                    echo "<td>"; echo $row["content11"]; echo "</td>";
-                                    echo "<td>"; echo $row["content12"]; echo "</td>";
-                                    echo "<td>"; echo $row["content21"]; echo "</td>";
-                                    echo "<td>"; echo $row["content22"]; echo "</td>";
-                                    echo "<td>"; echo $row["content31"]; echo "</td>";
-                                    echo "<td>"; echo $row["content32"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="personnel_edit_home_content.php?id=<?php echo $row["id"]; ?>"><button type="button" class="btn btn-success">Edit</button></a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="delete_content.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a> <?php echo "</td>";
-                                    echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                        </table>
-                    </div>
-                <?php
-                if(isset($_POST["submit1"]))
-                {
-                    mysqli_query($link, "INSERT INTO home_content VALUES(NULL, '$_POST[firsttag1]', '$_POST[firsttag2]', '$_POST[secondtag1]', '$_POST[secondtag2]', '$_POST[thirdtag1]', '$_POST[thirdtag2]')");
-                    ?>
-                    <script type="text/javascript">
-                        document.getElementById("error").style.display="none";
-                        document.getElementById("success").style.display="block";
-                        setTimeout(function(){
-                            window.location.href=window.location.href;
-                        }, 3000);
-                    </script>
-                <?php
-                }
-                ?>
+            </div>
+        </div>
     </div>
+<?php
+if(isset($_POST["update1"]))
+{
+    // $tm=md5(time());
+    // $fnm=$_FILES["image1"]["name"];
+    // $fnm=$_FILES["image2"]["name"];
+    // $fnm=$_FILES["image3"]["name"];
+    $tm1=md5(time());
+    $tm2=md5(time());
+    $tm3=md5(time());
+
+    $fnm1=$_FILES["img1"]["name"];
+    $fnm2=$_FILES["img2"]["name"];
+    $fnm3=$_FILES["img3"]["name"];
+
+    if($fnm1=="" || $fnm2=="" || $fnm3=="")
+    {
+      ?>
+      <script type="text/javascript">
+      document.getElementById("error").style.display="block";
+      document.getElementById("success").style.display="none";
+      setTimeout(function(){
+          window.location.href=window.location.href;
+      }, 3000);
+      </script>
+      <?php
+    }
+    else{
+        // $dst="./img/".$tm.$fnm;
+        // $dst1="img/".$tm.$fnm;
+        // move_uploaded_file($_FILES["image1"]["tmp_name"], $dst);
+        $dst1="./img/".$tm1.$fnm1;
+        $dst2="./img/".$tm2.$fnm2;
+        $dst3="./img/".$tm3.$fnm3;
+
+        $dstOne="img/".$tm1.$fnm1;
+        $dstTwo="img/".$tm2.$fnm2;
+        $dstThree="img/".$tm3.$fnm3;
+
+        move_uploaded_file($_FILES["img1"]["tmp_name"], $dstOne);
+        move_uploaded_file($_FILES["img2"]["tmp_name"], $dstTwo);
+        move_uploaded_file($_FILES["img3"]["tmp_name"], $dstThree);
+
+        mysqli_query($link, "update home_imgs set image1='$dstOne', image2='$dstTwo', image3='$dstThree' where id=$id");
+
+        ?>
+        <script type="text/javascript">
+        document.getElementById("error").style.display="none";
+        document.getElementById("success").style.display="block";
+        setTimeout(function(){
+            window.location.href=window.location.href;
+            window.location="personnel_dash_home_image.php";
+        }, 3000);
+        </script>
+        <?php
+    }
+}
+?>
+</div>
 <?php
 include "personnel_dash_footer.php";
 ?>

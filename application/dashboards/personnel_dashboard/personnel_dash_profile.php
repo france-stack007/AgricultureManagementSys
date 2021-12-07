@@ -1,26 +1,11 @@
 <?php
 include "personnel_dash_header.php";
-include "connection.php";
-
-$id=$_GET["id"];
-
-$image1="";
-$image2="";
-$image3="";
-
-$res = mysqli_query($link,"SELECT * FROM home_imgs WHERE id=$id");
-while($row=mysqli_fetch_array($res))
-{
-    $image1=$row["image1"];
-    $image2=$row["image2"];
-    $image3=$row["image3"];
-}
 ?>
     <!--sidebar start-->
     <div class="sidebar">
       <center>
         <img src="img/yinyang.png" class="profile_image" alt="">
-        <a href="personnel_dash_profile.php"><i class="fas fa-user"></i><span class="prof">Profile</span></a>
+        <a href="personnel_dash_profile.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-user"></i><span class="prof" style="color: rgba(0, 255, 0, 0.8)">Profile</span></a>
       </center>
       <hr style="color: white">
       <nav class="nav1">
@@ -44,7 +29,7 @@ while($row=mysqli_fetch_array($res))
             <li class="dropdown">
               <a href="#"><i class="fas fa-tools"></i><span>Home Features</span></a>
               <ul>
-                  <li><a href="personnel_dash_home_image.php" style="color: rgba(0, 255, 0, 0.8)"><i class="fas fa-wrench"></i><span>Customized Home Image</span></a></li>
+                  <li><a href="personnel_dash_home_image.php"><i class="fas fa-wrench"></i><span>Customized Home Image</span></a></li>
                   <li><a href="personnel_dash_home_content.php"><i class="fas fa-wrench"></i><span>Customized Home Content</span></a></li>
               </ul>
             </li>
@@ -347,137 +332,106 @@ while($row=mysqli_fetch_array($res))
       })
     </script>
     <div class="content">
-    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-     <br>
-     <h3>Customize Home Images</h3>
-     <hr>
-    <div class="container-fluid">
-            <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
-                <div class="span12">
-                    <div class="widget-box">
-                      
-                      <div class="widget-content nopadding">
-                        <form name="form1" action="" method="post" class="form-horizontal" enctype="multipart/form-data">
-
-                        <div style="display: flex; justify-content: center; margin: 20px; gap: 20px; flex-direction: column">
-                            <div class="control-group">
-                                <label class="control-label">Image1 :</label>
-                                <div class="controls">
-                                    <img src="<?php echo $image1;?>" height="100" width="200" name="image1" style="margin-left: 200px;">
+    <br>
+        <hr>
+        <div class="container" style="background-color: rgba(0,128,0, 0.1); padding-right: 30px">
+            <br>
+                <div class="row" id="main">
+                    <div class="col-md-4 well" id="leftPanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    <img src="./img/prof1.jpg" width="250" height="auto" alt="Texto Alternativo" class="img-circle img-thumbnail" style="border-radius: 10em; margin-top: 50px">
+                                    <h2>Jethro Guerrero</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="btn-group" style="padding-bottom: 10px">
+                                        <button type="button" class="btn btn-info">
+                                        Field Officer</button>
+                                    </div>
                                 </div>
-                              </div>
-                            
-                              <div class="control-group">
-                                <label class="control-label">Image2 :</label>
-                                <div class="controls">
-                                    <img src="<?php echo $image2;?>" height="100" width="200" name="image2" style="margin-left: 200px;">
-                                </div>
-                              </div>
-
-                              <div class="control-group">
-                                <label class="control-label">Image3 :</label>
-                                <div class="controls">
-                                    <img src="<?php echo $image3;?>" height="100" width="200" name="image3" style="margin-left: 200px;">
-                                </div>
-                              </div>
+                            </div>
                         </div>
-                        
-                        <div class="alert alert-danger" id="error" style="display: none;">
-                            <strong>Warning!</strong> Please Enter a file!
+                    </div>
+                <div class="col-md-8 well" id="rightPanel">
+            <div class="row">
+                <div class="col-md-12" style="margin: 35px 0 0 10px;">
+                    <form role="form">
+                    <h3>Edit Profile</h3>
+                        <hr class="colorgraph" style="height: 10px">
+                        <div class="formG" style="display: flex; flex-direction: row; gap: 40px; justify-content: center">
+                            <div style="width: 100%">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                            <label for="first_name">Name:</label>
+                                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" tabindex="1" value="Josie A. Katigbag" style="text-align: center">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                        <label for="last_name">Address:</label>
+                                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" tabindex="2" value="Recodo Zamboanga City" style="text-align: center">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                            <label for="password">Age:</label>
+                                            <input type="text" name="password" id="password" class="form-control input-lg" tabindex="5" value="69" style="text-align: center">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                            <label for="password_confirmation">Contact Number:</label>
+                                            <input type="number" name="password_confirmation" id="password_confirmation" class="form-control input-lg" tabindex="6" value="09067982233" style="text-align: center">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="inputC">
+                                            <label for="start">Birth Date:</label>
+                                            <input type="date" id="start" name="trip-start"
+                                                value="2000-01-01"
+                                                min="1900-01-01" max="2050-12-31" style="width: 100%" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                        <label for="selectD">Sex:</label>
+                                            <select class="selectD" style="width: 100%; height: auto; margin: 0; padding: 2px; border-radius: 3px">
+                                                <option>Choose Sex</option>
+                                                <option  selected value="1">Male</option>
+                                                <option value="2">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                            <label for="first_name">Program:</label>
+                                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" tabindex="1" value="Field Officer" style="text-align: center" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6" style="margin: 10px 0 10px;">
+                                        <div class="form-group">
+                                        <label for="last_name">Email Address:</label>
+                                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" tabindex="2" value="josie@yahoo.com" style="text-align: center" >
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div style="display: flex; justify-content: center">
+                            <a href="#" id="printB"><button class="btn btn-success" style="margin: 0 10px 10px 0; width: 100%">Update</button></a>
                         </div>
-
-                          <div class="control-group">
-                            <label class="control-label">Image1 :</label>
-                            <div class="controls">
-                              <input type="file" class="form-control span11" name="img1"/>
-                            </div>
-                          </div>
-
-                          <div class="control-group">
-                            <label class="control-label">Image2 :</label>
-                            <div class="controls">
-                              <input type="file" class="form-control span11" name="img2"/>
-                            </div>
-                          </div>
-
-                          <div class="control-group">
-                            <label class="control-label">Image3 :</label>
-                            <div class="controls">
-                              <input type="file" class="form-control span11" name="img3"/>
-                            </div>
-                          </div>
-
-                          <div class="form-actions" style="display: flex; justify-content: center; margin: 20px">
-                            <button type="submit" name="update1" class="btn btn-success" style="width: 25%">Update</button>
-                          </div>
-                          
-                          <div class="alert alert-success" id="success" style="display: none;">
-                              <strong>Success!</strong> Record Inserted Successfully.
-                          </div>
-                        </form>
-                      </div>
+                        <hr class="colorgraph" style="height: 10px; margin-bottom: 20px">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-<?php
-if(isset($_POST["update1"]))
-{
-    // $tm=md5(time());
-    // $fnm=$_FILES["image1"]["name"];
-    // $fnm=$_FILES["image2"]["name"];
-    // $fnm=$_FILES["image3"]["name"];
-    $tm1=md5(time());
-    $tm2=md5(time());
-    $tm3=md5(time());
-
-    $fnm1=$_FILES["img1"]["name"];
-    $fnm2=$_FILES["img2"]["name"];
-    $fnm3=$_FILES["img3"]["name"];
-
-    if($fnm1=="" || $fnm2=="" || $fnm3=="")
-    {
-      ?>
-      <script type="text/javascript">
-      document.getElementById("error").style.display="block";
-      document.getElementById("success").style.display="none";
-      setTimeout(function(){
-          window.location.href=window.location.href;
-      }, 3000);
-      </script>
-      <?php
-    }
-    else{
-        // $dst="./img/".$tm.$fnm;
-        // $dst1="img/".$tm.$fnm;
-        // move_uploaded_file($_FILES["image1"]["tmp_name"], $dst);
-        $dst1="./img/".$tm1.$fnm1;
-        $dst2="./img/".$tm2.$fnm2;
-        $dst3="./img/".$tm3.$fnm3;
-
-        $dstOne="img/".$tm1.$fnm1;
-        $dstTwo="img/".$tm2.$fnm2;
-        $dstThree="img/".$tm3.$fnm3;
-
-        move_uploaded_file($_FILES["img1"]["tmp_name"], $dstOne);
-        move_uploaded_file($_FILES["img2"]["tmp_name"], $dstTwo);
-        move_uploaded_file($_FILES["img3"]["tmp_name"], $dstThree);
-
-        mysqli_query($link, "update home_imgs set image1='$dstOne', image2='$dstTwo', image3='$dstThree' where id=$id");
-
-        ?>
-        <script type="text/javascript">
-        document.getElementById("error").style.display="none";
-        document.getElementById("success").style.display="block";
-        setTimeout(function(){
-            window.location.href=window.location.href;
-            window.location="personnel_dash_home_image.php";
-        }, 3000);
-        </script>
-        <?php
-    }
-}
-?>
 </div>
 <?php
 include "personnel_dash_footer.php";

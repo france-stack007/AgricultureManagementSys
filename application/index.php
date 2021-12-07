@@ -1,41 +1,25 @@
 <?php
 session_start();
-include "connection.php";
-//$email = "";
-$res = mysqli_query($link,"SELECT * FROM home_imgs");
-while($row=mysqli_fetch_array($res))
-{
-    $image1=$row["image1"];
-    $image2=$row["image2"];
-    $image3=$row["image3"];
-}
 
-$res = mysqli_query($link,"SELECT * FROM home_content");
-while($row=mysqli_fetch_array($res))
-{
-    $content11=$row["content11"];
-    $content12=$row["content12"];
-    $content21=$row["content21"];
-    $content22=$row["content22"];
-    $content31=$row["content31"];
-    $content32=$row["content32"];
-}
+    $res = mysqli_query($link,"SELECT * FROM home_imgs");
+    while($row=mysqli_fetch_array($res))
+    {
+        $image1=$row["image1"];
+        $image2=$row["image2"];
+        $image3=$row["image3"];
+    }
+
+    $res = mysqli_query($link,"SELECT * FROM home_content");
+    while($row=mysqli_fetch_array($res))
+    {
+        $content11=$row["content11"];
+        $content12=$row["content12"];
+        $content21=$row["content21"];
+        $content22=$row["content22"];
+        $content31=$row["content31"];
+        $content32=$row["content32"];
+    }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ayala District City Agriculturist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">-->
-<body>
     <header>
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
             <div class="container">
@@ -46,7 +30,7 @@ while($row=mysqli_fetch_array($res))
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Ayala | Agriculturist</a>
+                    <a class="navbar-brand" href="#">Ayala | <span class="highlight__green">Agriculturist</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -950,8 +934,6 @@ while($row=mysqli_fetch_array($res))
             document.querySelector(".popup").style.display = "flex";
         })
 </script>
-</body>
-</html>
 <style>
 html{
     /*filter: invert(0);*/
@@ -980,13 +962,10 @@ header .carousel-inner .item {
 	height: 100vh;
 }
 .farmer{
-    pointer-events: ;
 }
 .personnel{
-    pointer-events: ;
 }
 .admin{
-    pointer-events: ;
 }
 /*CONTACT SECTION*/
 .contact-form{
@@ -1415,7 +1394,6 @@ footer{
 .navbar-inverse .navbar-brand {
 	color: #fff;
 	font-size: 40px;
-    text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
     background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1427,7 +1405,6 @@ footer{
 }
 .navbar-inverse .navbar-nav>li>a {
 	color: #fff;
-    text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
     font-weight: 700;
     font-size: 15.3px;
 	text-transform: uppercase;
@@ -1517,7 +1494,6 @@ footer{
   color: white;
   font-family: 'Poppins', sans-serif;
   background-color: transparent;
-  text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
   padding: 14px;
   font-weight: 700;
   font-size: 16px;

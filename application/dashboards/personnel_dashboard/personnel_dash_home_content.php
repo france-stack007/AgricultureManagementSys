@@ -1,26 +1,5 @@
 <?php
 include "personnel_dash_header.php";
-include "connection.php";
-
-$id=$_GET["id"];
-
-$content11="";
-$content12="";
-$content21="";
-$content22="";
-$content31="";
-$content32="";
-
-$res = mysqli_query($link,"SELECT * FROM home_content WHERE id=$id");
-while($row=mysqli_fetch_array($res))
-{
-    $content11=$row["content11"];
-    $content12=$row["content12"];
-    $content21=$row["content21"];
-    $content22=$row["content22"];
-    $content31=$row["content31"];
-    $content32=$row["content32"];
-}
 ?>
     <!--sidebar start-->
     <div class="sidebar">
@@ -353,13 +332,13 @@ while($row=mysqli_fetch_array($res))
       })
     </script>
     <div class="content">
-        <br>
+    <br>
     <h3>Customize Home Contents</h3>
         <hr>
         <div class="container-fluid">
             <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
                 <div class="span12">
-                  <div class="widget-box">
+                <div class="widget-box">
                     <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
                     </div>
 
@@ -369,39 +348,39 @@ while($row=mysqli_fetch_array($res))
                     <div class="control-group">
                             <label class="control-label">First Slide 1st Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contOne" value="<?php echo $content11; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="firsttag1" required/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">First Slide 2nd Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contTwo" value="<?php echo $content12; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="firsttag2" required/>
                             </div>
                         </div>
                         
                         <div class="control-group">
                             <label class="control-label">Second Slide 1st Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contThree" value="<?php echo $content21; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="secondtag1" required/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Second Slide 2nd Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contFour" value="<?php echo $content22; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="secondtag2" required/>
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label">Third Slide 1st Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="contFive" value="<?php echo $content31; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="1st Paragraph" name="thirdtag1" required/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Third Slide 2nd Tag :</label>
                             <div class="controls">
-                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="contSix" value="<?php echo $content32; ?>" required/>
+                                <input type="text" class="form-control span11" placeholder="2nd Paragraph" name="thirdtag2" required/>
                             </div>
                         </div>
                         <div class="alert alert-danger" id="error" style="display: none;">
@@ -409,7 +388,7 @@ while($row=mysqli_fetch_array($res))
                         </div>
                         
                         <div class="form-actions" style="display: flex; justify-content: center; margin: 20px">
-                            <button type="submit" name="update" class="btn btn-success" style="width: 25%">Update</button>
+                            <button type="submit" name="submit1" class="btn btn-success" style="width: 25%">Save</button>
                         </div>
                         
                         <div class="alert alert-success" id="success" style="display: none;">
@@ -418,27 +397,56 @@ while($row=mysqli_fetch_array($res))
                     </form>
                     </div>
                 </div>
-          </div>
+                <div class="widget-content nopadding">
+                        <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                            <th>content1.1</th>
+                            <th>content1.2</th>
+                            <th>content2.1</th>
+                            <th>content2.2</th>
+                            <th>content3.1</th>
+                            <th>content3.2</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $res=mysqli_query($link,"SELECT * FROM home_content");
+                            while($row=mysqli_fetch_array($res))
+                            {
+                                    echo "<tr>";
+                                    echo "<td>"; echo $row["content11"]; echo "</td>";
+                                    echo "<td>"; echo $row["content12"]; echo "</td>";
+                                    echo "<td>"; echo $row["content21"]; echo "</td>";
+                                    echo "<td>"; echo $row["content22"]; echo "</td>";
+                                    echo "<td>"; echo $row["content31"]; echo "</td>";
+                                    echo "<td>"; echo $row["content32"]; echo "</td>";
+                                    echo "<td>"; ?> <a href="personnel_edit_home_content.php?id=<?php echo $row["id"]; ?>"><button type="button" class="btn btn-success">Edit</button></a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="delete_content.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a> <?php echo "</td>";
+                                    echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                        </table>
+                    </div>
+                <?php
+                if(isset($_POST["submit1"]))
+                {
+                    mysqli_query($link, "INSERT INTO home_content VALUES(NULL, '$_POST[firsttag1]', '$_POST[firsttag2]', '$_POST[secondtag1]', '$_POST[secondtag2]', '$_POST[thirdtag1]', '$_POST[thirdtag2]')");
+                    ?>
+                    <script type="text/javascript">
+                        document.getElementById("error").style.display="none";
+                        document.getElementById("success").style.display="block";
+                        setTimeout(function(){
+                            window.location.href=window.location.href;
+                        }, 3000);
+                    </script>
+                <?php
+                }
+                ?>
     </div>
-<?php
-if(isset($_POST["update"]))
-{
-
-  mysqli_query($link, "UPDATE home_content SET content11='$_POST[contOne]', content12='$_POST[contTwo]', content21='$_POST[contThree]', content22='$_POST[contFour]', content31='$_POST[contFive]', content32='$_POST[contSix]' WHERE id=$id");
-
-  ?>
-    <script type="text/javascript">
-    document.getElementById("error").style.display="none";
-    document.getElementById("success").style.display="block";
-    setTimeout(function(){
-        window.location.href=window.location.href;
-        window.location="personnel_dash_home_content.php";
-    }, 3000);
-    </script>
-  <?php
-}
-?>
-</div>
 <?php
 include "personnel_dash_footer.php";
 ?>

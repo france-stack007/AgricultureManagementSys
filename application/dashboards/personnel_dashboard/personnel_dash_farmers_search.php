@@ -1,5 +1,4 @@
 <?php
-include "connection.php";
 include "personnel_dash_header.php";
 ?>
     <!--sidebar start-->
