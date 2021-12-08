@@ -907,13 +907,13 @@ while($row=mysqli_fetch_array($res))
         const greenSpan = document.querySelector('.green-span')
         
         window.addEventListener('scroll', () => {
-            if(window.scrollY >= 220) {
+            if(window.scrollY >= 200) {
                 console.log(true)
                 greenSpan.style = `color: #312F2F`;
                 mainHeader.style = `
                     background: #4C9A2A
                 `
-            } else if (window.scrollY < 220) {
+            } else if (window.scrollY < 200) {
                 greenSpan.style = `color: #4C9A2A`;
                 mainHeader.style = `
                      background: none;

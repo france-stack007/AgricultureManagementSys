@@ -3,18 +3,12 @@ button {
     outline: none;
     border: none;
     border-radius: 5px;
-    max-width: 20em;
     justify-self: center;
     cursor: pointer;
     background: #4c9a2a;
     font-weight: bold;
     color: #ffffff;
     border: 1px #4c9a2a solid;
-}
-
-.m-w {
-    width: 100%;
-    max-width: unset;
 }
 
 button.secondary {

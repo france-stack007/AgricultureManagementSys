@@ -14,7 +14,6 @@ include "connection.php";
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./reset.css">
   </head>
-  <body>
 
     <input type="checkbox" id="check">
     <!--header area start-->
@@ -33,6 +32,17 @@ include "connection.php";
     </header>
     <!--header area end-->
 
+<script>
+  const mainHeader = document.querySelector('.main-header')
+  
+  window.addEventListener('scroll', () => {
+    if(window.scroll >= 220) {
+      mainHeader.style = `
+        background: 
+      `
+    }
+  })
+</script>
 <?php
 include "personnel_dash_footer.php";
 ?>

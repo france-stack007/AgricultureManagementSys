@@ -396,7 +396,7 @@ include "personnel_dash_header.php";
                     <div class="header"  style="display: flex; align-items: center; padding: 1em; justify-content: space-between; color: white; background: #4C9A2A">
                        <h3>Personnel Request</h3>
                        <a href="./print.php">
-                           <button style="background: #2F323A">Print</button>
+                           <button style="background: #2F323A; width: 8em; padding: 1em!important;">Print</button>
                        </a>
                    </div>
                   <hr>
