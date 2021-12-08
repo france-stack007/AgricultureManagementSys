@@ -82,7 +82,7 @@ while($row=mysqli_fetch_array($res))
                     <div class="banner" style="background-image: url('<?php echo $image1;?>');"></div>
                     <div class="carousel-caption">
                         <h2 class="animated slideInDown" style="animation-delay: 1s"><span><?php echo $content11;?></span></h2>
-                        <h3 class="animated fadeInUp" style="animation-delay: 2s"><?php echo $content12;?></h3>
+                        <h3 class="animated fadeInUp" style="animation-delay: 2s; color: white; font-weight: thin"><?php echo $content12;?></h3>
                         <p class="animated zoomIn" style="animation-delay: 3s;"><a href="#contact">Contact us</a></p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ while($row=mysqli_fetch_array($res))
                     <div class="banner" style="background-image: url('<?php echo $image2;?>');"></div>
                     <div class="carousel-caption">
                         <h2 class="animated slideInDown" style="animation-delay: 1s"><span><?php echo $content21;?></span></h2>
-                        <h3 class="animated fadeInUp" style="animation-delay: 2s"><?php echo $content22;?></h3>
+                        <h3 class="animated fadeInUp" style="animation-delay: 2s; color: white; font-weight: thin"><?php echo $content22;?></h3>
                         <p class="animated zoomIn" style="animation-delay: 3s"><a href="#contact">Contact us</a></p>
                     </div>
                 </div>
@@ -100,8 +100,8 @@ while($row=mysqli_fetch_array($res))
                     <div class="banner" style="background-image: url('<?php echo $image3;?>');"></div>
                     <div class="carousel-caption">
                         <h2 class="animated zoomIn" style="animation-delay: 1s"><span><?php echo $content31;?></span></h2>
-                        <h3 class="animated fadeInLeft" style="animation-delay: 2s"><?php echo $content32;?></h3>
-                        <p class="animated zoomIn" style="animation-delay: 3s"><a href="#contact">Contact us</a></p>
+                        <h3 class="animated fadeInLeft" style="animation-delay: 2s; color: white; font-weight: thin"><?php echo $content32;?></h3>
+                        <p class="animated zoomIn" style="animation-delay: 3s "><a href="#contact">Contact us</a></p>
                     </div>
                 </div>
             </div>
@@ -1473,7 +1473,7 @@ footer{
 	color: white;
 }
 .carousel-caption a {
-	background: rgba(0, 255, 0, 0.7);
+	background:#4C9A2A;
 	padding: 15px 35px;
 	display: inline-block;
 	margin-top: 15px;
@@ -1482,7 +1482,7 @@ footer{
 	border-radius: 25px;
 }
 .carousel-caption h3 {
-    color: rgba(0, 255, 0, 0.7);
+    color:#4C9A2A;
 }
 .carousel-control.right {
 	background-image: none;
