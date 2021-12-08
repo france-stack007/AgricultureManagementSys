@@ -4,9 +4,21 @@ include "personnel_head.php";
 ?>
 
 <script>
-    window.addEventListener('DOMContentLoaded', () => print())
+    const handlePrint = () => print()
+    const handleBack = () => window.history.back() 
 </script>
+<style>
+    @media print {
+        .print-btn {
+            display: none;
+        }
+    }
+</style>
 <div class="table-responsive container">
+    <div class="pt-5 pb-5 print-btn">
+        <button class="btn btn-secondary" onclick="handleBack()">Back</button>
+        <button class="btn btn-success" onclick="handlePrint()">Print</button>
+    </div>
         <table class="table table-hover table-sm" id="tableSearch">
             <thead>
                 <tr>
