@@ -83,7 +83,7 @@ while($row=mysqli_fetch_array($res))
                     <div class="carousel-caption">
                         <h2 class="animated slideInDown" style="animation-delay: 1s"><span><?php echo $content11;?></span></h2>
                         <h3 class="animated fadeInUp" style="animation-delay: 2s"><?php echo $content12;?></h3>
-                        <p class="animated zoomIn" style="animation-delay: 3s"><a href="#contact">Contact us</a></p>
+                        <p class="animated zoomIn" style="animation-delay: 3s;"><a href="#contact">Contact us</a></p>
                     </div>
                 </div>
                     
@@ -1553,6 +1553,8 @@ footer{
   /*background-color: rgba(76, 88, 76, 0.3);*/
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background: #4C9A2A;
+  border-radius: 5px;
   z-index: 1;
 }
 
