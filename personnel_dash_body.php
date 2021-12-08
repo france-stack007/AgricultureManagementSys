@@ -392,15 +392,13 @@ include "personnel_dash_header.php";
   <div class="container-fluid">
       <div class="row-fluid" style="background-color: white; min-height: 600px; padding:10px;">
           <div class="span12">
-              <div class="printGrp" style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-end; border: 2px solid black;
-                  padding: 15px 0 15px 0; margin-top: 10px; flex-wrap: wrap; background-color: rgba(0, 128, 0, 0.7); position: relative; z-index: 0">
-                  <div style="left: 10px; position: absolute">
-                      <h3>Search Request</h3>
-                    </div>
-                      <div style="margin: 0 10px 0 0">
-                          <a href="./print.php"><button class="btn btn-warning" style="margin: 0 10px 0 0; border-radius: 3px; width: 100%" >Print</button></a>
-                      </div>
-                  </div>
+              <div class="printGrp">
+                    <div class="header"  style="display: flex; align-items: center; padding: 1em; justify-content: space-between; color: white; background: #4C9A2A">
+                       <h3>Personnel Request</h3>
+                       <a href="./print.php">
+                           <button style="background: #2F323A">Print</button>
+                       </a>
+                   </div>
                   <hr>
                   <div class="table-responsive">
                       <table class="table table-hover table-sm" id="tableSearch">

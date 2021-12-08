@@ -5,7 +5,7 @@ include "personnel_head.php";
 
 <script>
     const handlePrint = () => print()
-    const handleBack = () => window.history.back() 
+    const handlePreviousPage = () => window.history.back() 
 </script>
 <style>
     @media print {
@@ -16,7 +16,7 @@ include "personnel_head.php";
 </style>
 <div class="table-responsive container">
     <div class="pt-5 pb-5 print-btn">
-        <button class="btn btn-secondary" onclick="handleBack()">Back</button>
+        <button class="btn btn-secondary" onclick="handlePreviousPage()">Back</button>
         <button class="btn btn-success" onclick="handlePrint()">Print</button>
     </div>
         <table class="table table-hover table-sm" id="tableSearch">

@@ -1,0 +1,35 @@
+button {
+    padding: 1em;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    max-width: 20em;
+    justify-self: center;
+    cursor: pointer;
+    background: #4c9a2a;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px #4c9a2a solid;
+}
+
+.m-w {
+    width: 100%;
+    max-width: unset;
+}
+
+button.secondary {
+    background: none;
+    border: 1px #4c9a2a solid;
+    color: #4c9a2a;
+}
+
+button.secondary:hover {
+    background: none;
+    background: #4c9a2a;
+    color: #ffffff;
+}
+
+button:hover {
+    background: #4c9a2a;
+    transition: all 0.5s;
+}

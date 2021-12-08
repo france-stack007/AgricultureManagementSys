@@ -10,6 +10,9 @@ include "connection.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./reset.css">
   </head>
   <body>
 
@@ -20,10 +23,12 @@ include "connection.php";
           <i class="fas fa-bars" id="sidebar_btn"></i>
         </label>
         <div class="left_area">
-          <h3>Personnel<span> Dashboard</span></h3>
+          <a href="./index.php" style="text-decoration: none;">
+            <h4 style="color: white;">Personnel<span> Dashboard</span></h4>
+          </a>
         </div>
         <div class="right_area">
-          <a href="#" class="logout_btn">Logout</a>
+          <button class="logout_btn">Logout</button>
         </div>
     </header>
     <!--header area end-->
