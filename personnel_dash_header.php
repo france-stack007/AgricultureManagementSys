@@ -18,7 +18,7 @@ include "connection.php";
 
     <input type="checkbox" id="check">
     <!--header area start-->
-    <header style="background: #2f323a;">
+    <header style="background: #2f323a;" class="main-header">
         <label for="check">
           <i class="fas fa-bars" id="sidebar_btn"></i>
         </label>
@@ -32,6 +32,7 @@ include "connection.php";
         </div>
     </header>
     <!--header area end-->
+
 <?php
 include "personnel_dash_footer.php";
 ?>

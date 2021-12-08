@@ -37,16 +37,16 @@ while($row=mysqli_fetch_array($res))
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">-->
 <body>
     <header>
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse main-header" >
+            <div class="container " >
+                <div class="navbar-header ">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Ayala | Agriculturist</a>
+                    <a class="logo" href="#" style="padding: 1em; font-weight: bold; font-size: 1.5em; color: white; position: relative; top: 1.5em;">Ayala | <span class="green-span"style="color: #4C9A2A">Agriculturist</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -901,6 +901,25 @@ while($row=mysqli_fetch_array($res))
                 z.style.display = "block";
             }
         }
+
+        // Navbar: On scroll effect
+        const mainHeader = document.querySelector('.main-header')
+        const greenSpan = document.querySelector('.green-span')
+        
+        window.addEventListener('scroll', () => {
+            if(window.scrollY >= 220) {
+                console.log(true)
+                greenSpan.style = `color: #312F2F`;
+                mainHeader.style = `
+                    background: #4C9A2A
+                `
+            } else if (window.scrollY < 220) {
+                greenSpan.style = `color: #4C9A2A`;
+                mainHeader.style = `
+                     background: none;
+                `
+            }
+        })
 
         document.getElementById("forPass").addEventListener("click", function(){
             document.querySelector(".popup").style.display = "none";
