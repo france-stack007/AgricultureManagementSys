@@ -398,7 +398,7 @@ include "personnel_dash_header.php";
                       <h3>Search Request</h3>
                     </div>
                       <div style="margin: 0 10px 0 0">
-                          <a href="#"><button class="logout_btn" style="margin: 0 10px 0 0; border-radius: 3px; width: 100%">Print</button></a>
+                          <a href="./print.php"><button class="btn btn-warning" style="margin: 0 10px 0 0; border-radius: 3px; width: 100%" >Print</button></a>
                       </div>
                   </div>
                   <hr>
